@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elements.Texttospeech">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="text"/>
+
+            <Slider 
+                x:Name="vol"
+                ValueChanged="Slider_ValueChanged"
+                Minimum="0.1"
+                Maximum="1.0"
+                />
+
+            <Slider 
+                x:Name="pit"
+                ValueChanged="Slider_ValueChanged_1"
+                Minimum="0.1"
+                Maximum="1.0"
+                />
+
+            <Label Text="Text To Speech" />
+            
+            
+            <Button 
+                Clicked="ButtonClicked"
+                Text="Speak"/>
+            
+        </StackLayout>
+        
+        
+    </ContentPage.Content>
+</ContentPage>
