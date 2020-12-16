@@ -17,19 +17,23 @@ namespace Elements
             InitializeComponent();
         }
 
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async void btn_Clicked(object sender, EventArgs e)
         {
             var options = new MapLaunchOptions { Name = "My Location" };
             try
             {
                 var location = await Xamarin.Essentials.Geolocation.GetLastKnownLocationAsync();
-                if(location==null)
+                if (location == null)
                 {
-                    location = await Xamarin.Essentials.Geolocation.GetLocationAsync(new GeolocationRequest { DesiredAccuracy = GeolocationAccuracy.Medium, Timeout = TimeSpan.FromSeconds(30) });
+                    location = await Xamarin.Essentials.Geolocation.GetLocationAsync(new GeolocationRequest
+                    {
+                        DesiredAccuracy = GeolocationAccuracy.Medium,
+                        Timeout = TimeSpan.FromSeconds(30),
+                    });
                 }
                 await Xamarin.Essentials.Map.OpenAsync(location, options);
             }
-            catch(Exception)
+            catch (Exception)
             {
 
             }

@@ -10,7 +10,7 @@ namespace Elements
         {
             InitializeComponent();
 
-            MainPage = new Map();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
