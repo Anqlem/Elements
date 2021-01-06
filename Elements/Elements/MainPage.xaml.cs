@@ -15,7 +15,7 @@ namespace Elements
         public MainPage()
         {
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 8; i++)
             {
                 Button btn = new Button()
                 {
@@ -37,11 +37,24 @@ namespace Elements
             buttons[4].Clicked += MainPage_Clicked5;
             buttons[5].Text = "Map";
             buttons[5].Clicked += MainPage_Clicked6;
+            buttons[6].Text = "spinner";
+            buttons[6].Clicked += MainPage_Clicked7;
+            buttons[7].Text = "Text Scale";
+            buttons[7].Clicked += MainPage_Clicked8;
+        }
+
+        private async void MainPage_Clicked8(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Textscale());
         }
 
         private async void MainPage_Clicked6(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Map());
+        } 
+        private async void MainPage_Clicked7(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TextSpinner());
         }
 
         private async void MainPage_Clicked5(object sender, EventArgs e)

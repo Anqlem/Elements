@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elements.TextSpinner">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label x:Name="_label" 
+               Text="SPINNER" 
+               HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand" />
+            <Label
+                   BindingContext="{x:Reference _sliderRotation}"
+                   Text="{Binding Value, StringFormat='Rotation = {0:F0}'}"
+                   VerticalTextAlignment="Center" />
+            <Slider x:Name="_sliderRotation"
+                    BindingContext="{x:Reference _label}"
+                    Maximum="360"
+                    Value="{Binding Rotation}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

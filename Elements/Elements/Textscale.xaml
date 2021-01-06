@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Elements.Textscale">
+    <StackLayout>
+            <Label x:Name="_label" 
+               Text="SCALE" 
+               HorizontalOptions="Center" 
+               VerticalOptions="CenterAndExpand" />
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="0.5*" />
+                </Grid.ColumnDefinitions>
+                <Label BindingContext="{x:Reference _sliderScale}"
+                   Text="{Binding Value, StringFormat='Scale = {0:F1}'}"
+                   VerticalTextAlignment="Center" />
+                <Slider x:Name="_sliderScale"
+                    Grid.Column="1"
+                    BindingContext="{x:Reference _label}"
+                    Maximum="10"
+                    Value="{Binding Scale}" />
+                <Label Grid.Row="1"
+                   BindingContext="{x:Reference _sliderScaleX}"
+                   Text="{Binding Value, StringFormat='ScaleX = {0:F1}'}"
+                   VerticalTextAlignment="Center" />
+                <Slider x:Name="_sliderScaleX"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    BindingContext="{x:Reference _label}"
+                    Maximum="10"
+                    Value="{Binding ScaleX}" />
+                <Label Grid.Row="2"
+                   BindingContext="{x:Reference _sliderScaleY}"
+                   Text="{Binding Value, StringFormat='ScaleY = {0:F1}'}"
+                   VerticalTextAlignment="Center" />
+                <Slider x:Name="_sliderScaleY"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    BindingContext="{x:Reference _label}"
+                    Maximum="10"
+                    Value="{Binding ScaleY}"/>
+            </Grid>
+        </StackLayout>
+</ContentPage>
